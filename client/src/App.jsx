@@ -64,12 +64,18 @@ export default function App() {
             </a>
           ))}
         </nav>
+        <a className="powered-badge" href="https://www.deepseek.com" target="_blank" rel="noopener noreferrer" title="本系统由 DeepSeek 提供智能支持">
+          🐋 Powered by DeepSeek
+        </a>
         <div className={`mode-badge ${mockMode ? 'mock' : ''}`}>
           {mockMode === null ? '…' : mockMode ? '⚡ 演示模式（未配置 LLM）' : '🔗 已连接 LLM'}
         </div>
       </header>
       <main className="content">{view}</main>
-      <footer className="footer">interOffer · 严格模拟面试，助你更快拿到 Offer</footer>
+      <footer className="footer">
+        interOffer · 严格模拟面试，助你更快拿到 Offer · Powered by{' '}
+        <a href="https://www.deepseek.com" target="_blank" rel="noopener noreferrer">DeepSeek</a>
+      </footer>
     </div>
   );
 }

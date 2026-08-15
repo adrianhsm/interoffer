@@ -60,6 +60,13 @@ button { font-family: inherit; }
   background: var(--green-soft); color: var(--green); font-weight: 600; white-space: nowrap;
 }
 .mode-badge.mock { background: var(--amber-soft); color: var(--amber); }
+.powered-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 12px; font-weight: 600; color: var(--ink-2);
+  padding: 5px 12px; border-radius: 999px; border: 1px solid var(--line);
+  background: var(--card); white-space: nowrap; transition: all .15s;
+}
+.powered-badge:hover { color: #4d6bfe; border-color: #b9c4fe; background: var(--accent-soft); }
 
 .content { flex: 1; width: 100%; max-width: 1180px; margin: 0 auto; padding: 28px 24px 60px; }
 .footer { text-align: center; color: var(--ink-3); font-size: 12.5px; padding: 18px; border-top: 1px solid var(--line); }
