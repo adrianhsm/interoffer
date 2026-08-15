@@ -1,0 +1,7 @@
+node_modules/
+client/dist/
+server/data/
+.npm-cache/
+*.log
+.env
+.DS_Store

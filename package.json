@@ -1,0 +1,28 @@
+{
+  "name": "interoffer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI 模拟面试系统：职位需求/领域驱动的严格模拟面试，自动评价与历史分析",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "build": "vite build client",
+    "dev": "cross-env NODE_ENV=development node server/index.js",
+    "dev:client": "vite",
+    "smoke": "node scripts/smoke.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "cross-env": "^7.0.3",
+    "echarts": "^5.5.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vite": "^5.4.8"
+  }
+}
