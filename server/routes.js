@@ -88,7 +88,14 @@ api.post('/interviews/:id/start', async (req, res) => {
     const startedAt = nowIso();
     updateInterview(req.params.id, { status: 'active', started_at: startedAt });
     const totalSec = (iv.duration_minutes || 60) * 60;
-    const greeting = await interviewerReply({ interview: iv, messages: [], elapsedSec: 0, totalSec });
+    let greeting;
+    try {
+      greeting = await interviewerReply({ interview: iv, messages: [], elapsedSec: 0, totalSec });
+    } catch (err) {
+      console.error('[start] LLM 失败，回退 mock 开场白:', err.message);
+      const { mockInterviewerReply } = await import('./llm.js');
+      greeting = await mockInterviewerReply({ interview: iv, messages: [], elapsedSec: 0, totalSec });
+    }
     appendMessage(req.params.id, 'assistant', greeting);
     const row = getInterview(req.params.id);
     row.messages = getMessages(req.params.id);
